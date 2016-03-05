@@ -1,27 +1,22 @@
 Rails.application.routes.draw do
-  get 'posts/Y'
+  get 'say/hello'
 
-  get 'posts/edit'
+  get 'say/goodbye'
 
-  get 'posts/new'
+  get 'say/task1'
 
-  get 'posts/show'
+  get 'say/hello'
 
-  get 'posts/index'
+  get 'say/goodbye'
 
-  get 'posts/edit'
+  # get 'posts/edit'
+  #
+  # get 'posts/new'
+  #
+  # get 'posts/show'
+  #
+  # get 'posts/index'
 
-  get 'posts/new'
-
-  get 'posts/index'
-
-  get 'posts/show'
-
-  get 'posts/index'
-
-  get 'posts/posts'
-
-  resources :posts
   devise_for :users
   resources :users
   devise_scope :user do
@@ -34,7 +29,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'users#index'
+  #root 'users#index'
+  root 'say#hello'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
