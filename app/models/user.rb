@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates :age, presence: true, numericality: { minimum: 18 }
   validates :name, presence: true, length: { minimum: 2 }
+  has_many :posts
 end

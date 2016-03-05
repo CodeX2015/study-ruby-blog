@@ -2,12 +2,16 @@
 <html>
 <head>
   <title>StudyRubyBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if current_user %>
+    <%= link_to 'Logout', logout_path %>
+<% else %>
+    <%= link_to 'Sign in', sign_in_path %> or <%= link_to 'Sign up', sign_up_path %>
+<% end %>
 <%= yield %>
 
 </body>

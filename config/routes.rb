@@ -1,9 +1,35 @@
 Rails.application.routes.draw do
+  get 'posts/Y'
+
+  get 'posts/edit'
+
+  get 'posts/new'
+
+  get 'posts/show'
+
+  get 'posts/index'
+
+  get 'posts/edit'
+
+  get 'posts/new'
+
+  get 'posts/index'
+
+  get 'posts/show'
+
+  get 'posts/index'
+
+  get 'posts/posts'
+
+  resources :posts
   devise_for :users
   resources :users
   devise_scope :user do
-    get "sign_in", to: "devise/registration#new", as: :sign_in
+    get "sign_up", to: "devise/registration#new", as: :sign_up
+    get "sign_in", to: "devise/sessions#new", as: :sign_in
+    get "sign_out", to: "devise/sessions#destroy", as: :logout
   end
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
